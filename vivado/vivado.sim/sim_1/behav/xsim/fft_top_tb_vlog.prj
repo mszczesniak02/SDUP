@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../vivado.srcs/sources_1/new/btf_radix2.sv" \
+"../../../../vivado.srcs/sim_1/new/btf_radix2_tb.sv" \
+"../../../../vivado.srcs/sources_1/new/fft.sv" \
+"../../../../vivado.srcs/sources_1/new/fft_fsm.sv" \
+"../../../../vivado.srcs/sim_1/new/fft_fsm_tb.sv" \
+"../../../../vivado.srcs/sim_1/new/fft_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
