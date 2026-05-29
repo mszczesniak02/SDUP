@@ -1,0 +1,14 @@
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+--- ZAPIS DANYCH WEJŚCIOWYCH ---
+--- ROZPOCZĘCIE OBLICZEŃ SPRZĘTOWYCH ---
+--- ODCZYT WYNIKÓW Z BRAM ---
+Bin 0 -> Re:   1000, Im:      0
+Bin 1 -> Re:   1000, Im:      0
+Bin 2 -> Re:   1000, Im:      0
+Bin 3 -> Re:   1000, Im:      0
+Bin 4 -> Re:   1000, Im:      0
+Bin 5 -> Re:   1000, Im:      0
+Bin 6 -> Re:   1000, Im:      0
+Bin 7 -> Re:   1000, Im:      0
+$finish called at time : 536 ns : File "/home/krzeslaav/SEM_1/sdup_project/vivado/vivado.srcs/sim_1/new/fft_tb.sv" Line 115
