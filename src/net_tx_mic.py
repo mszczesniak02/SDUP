@@ -6,7 +6,7 @@ import numpy as np
 import sounddevice as sd
 
 
-TARGET_IP = "127.0.0.1"  # zenq board IP
+TARGET_IP = "10.0.0.2"  # zenq board IP
 PORT = 5005
 CHUNK_SIZE = 2048
 FS = 44100

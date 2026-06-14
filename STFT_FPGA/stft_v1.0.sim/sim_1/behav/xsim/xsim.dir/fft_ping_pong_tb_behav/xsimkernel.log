@@ -1,0 +1,7 @@
+Running: xsim.dir/fft_ping_pong_tb_behav/xsimk -simmode gui -wdb fft_ping_pong_tb_behav.wdb -simrunnum 0 -socket 38107
+Design successfully loaded
+Design Loading Memory Usage: 199216 KB (Peak: 199216 KB)
+Design Loading CPU Usage: 1860 ms
+Simulation completed
+Simulation Memory Usage: 281212 KB (Peak: 338484 KB)
+Simulation CPU Usage: 1870 ms

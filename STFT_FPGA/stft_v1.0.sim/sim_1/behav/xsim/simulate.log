@@ -1,0 +1,38 @@
+Time resolution is 1 ps
+=== ROZPOCZECIE NADAWANIA RAMKI 0 ===
+=== ROZPOCZECIE NADAWANIA RAMKI 1 ===
+Czas: 815000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 825000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 845000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 855000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 865000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 885000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 895000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 905000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 925000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 945000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 955000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 965000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 975000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 985000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 995000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 0
+Czas: 1005000 | Wynik STFT: Re = 0, Im = 0 | TLAST = 1
+=== OTRZYMANO PRAWIDŁOWY SYGNAŁ KOŃCA RAMKI (TLAST) ===
+Czas: 1565000 | Wynik STFT: Re = -1406, Im = -1383 | TLAST = 0
+Czas: 1575000 | Wynik STFT: Re = -1406, Im = -1383 | TLAST = 0
+Czas: 1585000 | Wynik STFT: Re = 2126, Im = 1323 | TLAST = 0
+Czas: 1595000 | Wynik STFT: Re = -413, Im = 1302 | TLAST = 0
+Czas: 1605000 | Wynik STFT: Re = 1620, Im = -1107 | TLAST = 0
+Czas: 1625000 | Wynik STFT: Re = 967, Im = -1037 | TLAST = 0
+Czas: 1635000 | Wynik STFT: Re = -855, Im = -69 | TLAST = 0
+Czas: 1675000 | Wynik STFT: Re = -855, Im = -69 | TLAST = 0
+Czas: 1685000 | Wynik STFT: Re = 622, Im = -445 | TLAST = 0
+Czas: 1695000 | Wynik STFT: Re = 622, Im = -445 | TLAST = 0
+Czas: 1725000 | Wynik STFT: Re = 250, Im = 1727 | TLAST = 0
+Czas: 1735000 | Wynik STFT: Re = 1000, Im = 649 | TLAST = 0
+Czas: 1755000 | Wynik STFT: Re = 1000, Im = 649 | TLAST = 0
+Czas: 1765000 | Wynik STFT: Re = 487, Im = 1160 | TLAST = 0
+Czas: 1775000 | Wynik STFT: Re = 487, Im = 1160 | TLAST = 0
+Czas: 1785000 | Wynik STFT: Re = 309, Im = -69 | TLAST = 1
+=== OTRZYMANO PRAWIDŁOWY SYGNAŁ KOŃCA RAMKI (TLAST) ===
+INFO: xsimkernel Simulation Memory Usage: 281240 KB (Peak: 338512 KB), Simulation CPU Usage: 1850 ms

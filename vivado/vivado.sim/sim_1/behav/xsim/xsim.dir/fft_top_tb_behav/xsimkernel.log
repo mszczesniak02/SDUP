@@ -1,7 +1,0 @@
-Running: xsim.dir/fft_top_tb_behav/xsimk -simmode gui -wdb fft_top_tb_behav.wdb -simrunnum 0 -socket 44451
-Design successfully loaded
-Design Loading Memory Usage: 43648 KB (Peak: 43768 KB)
-Design Loading CPU Usage: 20 ms
-Simulation completed
-Simulation Memory Usage: 129744 KB (Peak: 190920 KB)
-Simulation CPU Usage: 30 ms
