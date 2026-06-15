@@ -3,7 +3,7 @@
 module fft_fsm #(
     parameter N_POINTS = 512,
     parameter LOG2_N = 9,
-    parameter PIPELINE_DELAY = 3
+    parameter PIPELINE_DELAY = 2
 )(
     input  wire clk,
     input  wire rst_n,

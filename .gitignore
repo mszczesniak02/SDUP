@@ -6,3 +6,6 @@ share/
 pyvenv.cfg
 etc/
 src/.ipynb_checkpoints/
+.new_vivado_files/
+.Xil
+sample_data/

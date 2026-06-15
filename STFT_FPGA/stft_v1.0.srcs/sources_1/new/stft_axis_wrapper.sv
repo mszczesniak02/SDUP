@@ -158,6 +158,19 @@ module stft_axis_wrapper #(
     end
 
     // 5. REJESTRY WYJŚCIOWE AXI-STREAM (Handshake Preservation)
+    reg tx_busy_d1;
+    reg [LOG2_N-1:0] tx_counter_d1;
+
+    always @(posedge ACLK or negedge ARESETN) begin
+        if (!ARESETN) begin
+            tx_busy_d1    <= 0;
+            tx_counter_d1 <= 0;
+        end else begin
+            tx_busy_d1    <= tx_busy;
+            tx_counter_d1 <= tx_counter;
+        end
+    end
+
     reg [31:0] axis_tdata_reg;
     reg axis_tvalid_reg;
     reg axis_tlast_reg;
@@ -169,8 +182,8 @@ module stft_axis_wrapper #(
             axis_tdata_reg  <= 0;
         end else begin
             if (M_AXIS_TREADY || !axis_tvalid_reg) begin
-                axis_tvalid_reg <= tx_busy;
-                axis_tlast_reg  <= (tx_counter == N_POINTS - 1) && tx_busy;
+                axis_tvalid_reg <= tx_busy_d1;
+                axis_tlast_reg  <= (tx_counter_d1 == N_POINTS - 1) && tx_busy_d1;
                 axis_tdata_reg  <= {fft_out_im, fft_out_re}; // Pakowanie: upper=Im, lower=Re
             end
         end

@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun Jun 14 14:14:03 2026
+# Process ID         : 74147
+# Current directory  : /home/krzeslaav/SEM_1/sdup_project/STFT_FPGA/stft_v1.0.runs/main_design_axi_gpio_0_0_synth_1
+# Command line       : vivado -log main_design_axi_gpio_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main_design_axi_gpio_0_0.tcl
+# Log file           : /home/krzeslaav/SEM_1/sdup_project/STFT_FPGA/stft_v1.0.runs/main_design_axi_gpio_0_0_synth_1/main_design_axi_gpio_0_0.vds
+# Journal file       : /home/krzeslaav/SEM_1/sdup_project/STFT_FPGA/stft_v1.0.runs/main_design_axi_gpio_0_0_synth_1/vivado.jou
+# Running On         : krzeslaav
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : Intel(R) Core(TM) i5-6300HQ CPU @ 2.30GHz
+# CPU Frequency      : 2600.008 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 4
+# Host memory        : 16644 MB
+# Swap memory        : 8048 MB
+# Total Virtual      : 24693 MB
+# Available Virtual  : 11442 MB
+#-----------------------------------------------------------
+source main_design_axi_gpio_0_0.tcl -notrace

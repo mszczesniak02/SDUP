@@ -1,0 +1,185 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sun Jun 14 21:30:12 2026
+| Host         : krzeslaav running 64-bit Ubuntu 24.04.4 LTS
+| Command      : report_methodology -file main_design_wrapper_methodology_drc_routed.rpt -pb main_design_wrapper_methodology_drc_routed.pb -rpx main_design_wrapper_methodology_drc_routed.rpx
+| Design       : main_design_wrapper
+| Device       : xck26-sfvc784-2LV-c
+| Speed File   : -2LV
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 30
++--------+----------+---------------------------+--------+
+| Rule   | Severity | Description               | Checks |
++--------+----------+---------------------------+--------+
+| DPIR-2 | Warning  | Asynchronous driver check | 30     |
++--------+----------+---------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPIR-2#1 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#2 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#3 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#4 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#5 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#6 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#7 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#8 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[16] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#9 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[17] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#10 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[18] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#11 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[19] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#12 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#13 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[20] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#14 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[21] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#15 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[22] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#16 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[23] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#17 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[24] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#18 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[25] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#19 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[26] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#20 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[27] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#21 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[28] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#22 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[29] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#23 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#24 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#25 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#26 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#27 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#28 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#29 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-2#30 Warning
+Asynchronous driver check  
+DSP main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0 input pin main_design_i/stft_axis_wrapper_0/inst/win_inst/mult_res0/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+

@@ -1,0 +1,58 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sun Jun 14 21:22:59 2026
+| Host         : krzeslaav running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xck26-sfvc784-2LV-c
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'main_design_stft_axis_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of main_design_stft_axis_wrapper_0_0 (user.org:ip:stft_axis_wrapper:1.0 (Rev. 5)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sun Jun 14 21:03:27 2026
+| Host         : krzeslaav running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xck26-sfvc784-2LV-c
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'main_design_stft_axis_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of main_design_stft_axis_wrapper_0_0 (user.org:ip:stft_axis_wrapper:1.0 (Rev. 5)) to current project options.
+
+
+
+
+
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sun Jun 14 15:18:21 2026
+| Host         : krzeslaav running 64-bit Ubuntu 24.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xck26-sfvc784-2LV-c
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'main_design_stft_axis_wrapper_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the update of main_design_stft_axis_wrapper_0_0 (user.org:ip:stft_axis_wrapper:1.0 (Rev. 5)) to current project options.
+

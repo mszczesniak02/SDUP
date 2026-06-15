@@ -3,7 +3,7 @@
 module fft_pingpong #(
     parameter N_POINTS = 512,
     parameter LOG2_N = 9,
-    parameter PIPELINE_DELAY = 3
+    parameter PIPELINE_DELAY = 2
 )(
     input  wire clk,
     input  wire rst_n,
@@ -119,7 +119,7 @@ module fft_pingpong #(
         addr_b_d3 <= addr_b_d2;
     end
 
-    assign done = done_d3; // Koniec etapu FFT po 3 cyklach opóźnienia (1 BRAM + 2 Butterfly)
+    assign done = done_d2; // Koniec etapu FFT po 2 cyklach opóźnienia (1 BRAM + 1 Butterfly z rejestrowaniem)
 
     // Definicja motylka FFT
     wire signed [15:0] bfly_out_A_re, bfly_out_A_im, bfly_out_B_re, bfly_out_B_im;
@@ -144,8 +144,19 @@ module fft_pingpong #(
         end
     end
     
-    assign rom_out_W_re = rom_w_re[fsm_addr_w];
-    assign rom_out_W_im = rom_w_im[fsm_addr_w];
+    reg signed [15:0] rom_out_W_re_reg;
+    reg signed [15:0] rom_out_W_im_reg;
+    always @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            rom_out_W_re_reg <= 16'd0;
+            rom_out_W_im_reg <= 16'd0;
+        end else begin
+            rom_out_W_re_reg <= rom_w_re[fsm_addr_w];
+            rom_out_W_im_reg <= rom_w_im[fsm_addr_w];
+        end
+    end
+    assign rom_out_W_re = rom_out_W_re_reg;
+    assign rom_out_W_im = rom_out_W_im_reg;
 
     btf_radix2 bfly_inst (
         .clk(clk),
@@ -223,34 +234,34 @@ module fft_pingpong #(
         // Podczas obliczeń: jeśli etap parzysty - piszemy do A. Jeśli nieparzysty - czytamy z A.
         case (fft_a_idx)
             2'd0: begin
-                addr_0_A = stage_is_odd ? fsm_addr_a : addr_a_d3;
-                addr_0_B = stage_is_odd ? fsm_addr_b : addr_b_d3;
-                we_0_A   = stage_is_odd ? 1'b0 : valid_d3;
-                we_0_B   = stage_is_odd ? 1'b0 : valid_d3;
+                addr_0_A = stage_is_odd ? fsm_addr_a : addr_a_d2;
+                addr_0_B = stage_is_odd ? fsm_addr_b : addr_b_d2;
+                we_0_A   = stage_is_odd ? 1'b0 : valid_d2;
+                we_0_B   = stage_is_odd ? 1'b0 : valid_d2;
                 din_0_A_re = bfly_out_A_re; din_0_A_im = bfly_out_A_im;
                 din_0_B_re = bfly_out_B_re; din_0_B_im = bfly_out_B_im;
             end
             2'd1: begin
-                addr_1_A = stage_is_odd ? fsm_addr_a : addr_a_d3;
-                addr_1_B = stage_is_odd ? fsm_addr_b : addr_b_d3;
-                we_1_A   = stage_is_odd ? 1'b0 : valid_d3;
-                we_1_B   = stage_is_odd ? 1'b0 : valid_d3;
+                addr_1_A = stage_is_odd ? fsm_addr_a : addr_a_d2;
+                addr_1_B = stage_is_odd ? fsm_addr_b : addr_b_d2;
+                we_1_A   = stage_is_odd ? 1'b0 : valid_d2;
+                we_1_B   = stage_is_odd ? 1'b0 : valid_d2;
                 din_1_A_re = bfly_out_A_re; din_1_A_im = bfly_out_A_im;
                 din_1_B_re = bfly_out_B_re; din_1_B_im = bfly_out_B_im;
             end
             2'd2: begin
-                addr_2_A = stage_is_odd ? fsm_addr_a : addr_a_d3;
-                addr_2_B = stage_is_odd ? fsm_addr_b : addr_b_d3;
-                we_2_A   = stage_is_odd ? 1'b0 : valid_d3;
-                we_2_B   = stage_is_odd ? 1'b0 : valid_d3;
+                addr_2_A = stage_is_odd ? fsm_addr_a : addr_a_d2;
+                addr_2_B = stage_is_odd ? fsm_addr_b : addr_b_d2;
+                we_2_A   = stage_is_odd ? 1'b0 : valid_d2;
+                we_2_B   = stage_is_odd ? 1'b0 : valid_d2;
                 din_2_A_re = bfly_out_A_re; din_2_A_im = bfly_out_A_im;
                 din_2_B_re = bfly_out_B_re; din_2_B_im = bfly_out_B_im;
             end
             2'd3: begin
-                addr_3_A = stage_is_odd ? fsm_addr_a : addr_a_d3;
-                addr_3_B = stage_is_odd ? fsm_addr_b : addr_b_d3;
-                we_3_A   = stage_is_odd ? 1'b0 : valid_d3;
-                we_3_B   = stage_is_odd ? 1'b0 : valid_d3;
+                addr_3_A = stage_is_odd ? fsm_addr_a : addr_a_d2;
+                addr_3_B = stage_is_odd ? fsm_addr_b : addr_b_d2;
+                we_3_A   = stage_is_odd ? 1'b0 : valid_d2;
+                we_3_B   = stage_is_odd ? 1'b0 : valid_d2;
                 din_3_A_re = bfly_out_A_re; din_3_A_im = bfly_out_A_im;
                 din_3_B_re = bfly_out_B_re; din_3_B_im = bfly_out_B_im;
             end
@@ -260,34 +271,34 @@ module fft_pingpong #(
         // Podczas obliczeń: jeśli etap parzysty - czytamy z B. Jeśli nieparzysty - piszemy do B.
         case (fft_b_idx)
             2'd0: begin
-                addr_0_A = stage_is_odd ? addr_a_d3 : fsm_addr_a;
-                addr_0_B = stage_is_odd ? addr_b_d3 : fsm_addr_b;
-                we_0_A   = stage_is_odd ? valid_d3 : 1'b0;
-                we_0_B   = stage_is_odd ? valid_d3 : 1'b0;
+                addr_0_A = stage_is_odd ? addr_a_d2 : fsm_addr_a;
+                addr_0_B = stage_is_odd ? addr_b_d2 : fsm_addr_b;
+                we_0_A   = stage_is_odd ? valid_d2 : 1'b0;
+                we_0_B   = stage_is_odd ? valid_d2 : 1'b0;
                 din_0_A_re = bfly_out_A_re; din_0_A_im = bfly_out_A_im;
                 din_0_B_re = bfly_out_B_re; din_0_B_im = bfly_out_B_im;
             end
             2'd1: begin
-                addr_1_A = stage_is_odd ? addr_a_d3 : fsm_addr_a;
-                addr_1_B = stage_is_odd ? addr_b_d3 : fsm_addr_b;
-                we_1_A   = stage_is_odd ? valid_d3 : 1'b0;
-                we_1_B   = stage_is_odd ? valid_d3 : 1'b0;
+                addr_1_A = stage_is_odd ? addr_a_d2 : fsm_addr_a;
+                addr_1_B = stage_is_odd ? addr_b_d2 : fsm_addr_b;
+                we_1_A   = stage_is_odd ? valid_d2 : 1'b0;
+                we_1_B   = stage_is_odd ? valid_d2 : 1'b0;
                 din_1_A_re = bfly_out_A_re; din_1_A_im = bfly_out_A_im;
                 din_1_B_re = bfly_out_B_re; din_1_B_im = bfly_out_B_im;
             end
             2'd2: begin
-                addr_2_A = stage_is_odd ? addr_a_d3 : fsm_addr_a;
-                addr_2_B = stage_is_odd ? addr_b_d3 : fsm_addr_b;
-                we_2_A   = stage_is_odd ? valid_d3 : 1'b0;
-                we_2_B   = stage_is_odd ? valid_d3 : 1'b0;
+                addr_2_A = stage_is_odd ? addr_a_d2 : fsm_addr_a;
+                addr_2_B = stage_is_odd ? addr_b_d2 : fsm_addr_b;
+                we_2_A   = stage_is_odd ? valid_d2 : 1'b0;
+                we_2_B   = stage_is_odd ? valid_d2 : 1'b0;
                 din_2_A_re = bfly_out_A_re; din_2_A_im = bfly_out_A_im;
                 din_2_B_re = bfly_out_B_re; din_2_B_im = bfly_out_B_im;
             end
             2'd3: begin
-                addr_3_A = stage_is_odd ? addr_a_d3 : fsm_addr_a;
-                addr_3_B = stage_is_odd ? addr_b_d3 : fsm_addr_b;
-                we_3_A   = stage_is_odd ? valid_d3 : 1'b0;
-                we_3_B   = stage_is_odd ? valid_d3 : 1'b0;
+                addr_3_A = stage_is_odd ? addr_a_d2 : fsm_addr_a;
+                addr_3_B = stage_is_odd ? addr_b_d2 : fsm_addr_b;
+                we_3_A   = stage_is_odd ? valid_d2 : 1'b0;
+                we_3_B   = stage_is_odd ? valid_d2 : 1'b0;
                 din_3_A_re = bfly_out_A_re; din_3_A_im = bfly_out_A_im;
                 din_3_B_re = bfly_out_B_re; din_3_B_im = bfly_out_B_im;
             end
@@ -295,26 +306,76 @@ module fft_pingpong #(
     end
 
     // --- FIZYCZNE PAMIĘCI RAM (Dual-Port BRAM z 1-taktową latencją odczytu) ---
+    // RAM 0
     always @(posedge clk) begin
-        if (we_0_A) begin ram_0_re[addr_0_A] <= din_0_A_re; ram_0_im[addr_0_A] <= din_0_A_im; end
-        if (we_0_B) begin ram_0_re[addr_0_B] <= din_0_B_re; ram_0_im[addr_0_B] <= din_0_B_im; end
-        dout_0_A_re <= ram_0_re[addr_0_A]; dout_0_A_im <= ram_0_im[addr_0_A];
-        dout_0_B_re <= ram_0_re[addr_0_B]; dout_0_B_im <= ram_0_im[addr_0_B];
+        if (we_0_A) begin
+            ram_0_re[addr_0_A] <= din_0_A_re;
+            ram_0_im[addr_0_A] <= din_0_A_im;
+        end
+        dout_0_A_re <= ram_0_re[addr_0_A];
+        dout_0_A_im <= ram_0_im[addr_0_A];
+    end
+    always @(posedge clk) begin
+        if (we_0_B) begin
+            ram_0_re[addr_0_B] <= din_0_B_re;
+            ram_0_im[addr_0_B] <= din_0_B_im;
+        end
+        dout_0_B_re <= ram_0_re[addr_0_B];
+        dout_0_B_im <= ram_0_im[addr_0_B];
+    end
 
-        if (we_1_A) begin ram_1_re[addr_1_A] <= din_1_A_re; ram_1_im[addr_1_A] <= din_1_A_im; end
-        if (we_1_B) begin ram_1_re[addr_1_B] <= din_1_B_re; ram_1_im[addr_1_B] <= din_1_B_im; end
-        dout_1_A_re <= ram_1_re[addr_1_A]; dout_1_A_im <= ram_1_im[addr_1_A];
-        dout_1_B_re <= ram_1_re[addr_1_B]; dout_1_B_im <= ram_1_im[addr_1_B];
+    // RAM 1
+    always @(posedge clk) begin
+        if (we_1_A) begin
+            ram_1_re[addr_1_A] <= din_1_A_re;
+            ram_1_im[addr_1_A] <= din_1_A_im;
+        end
+        dout_1_A_re <= ram_1_re[addr_1_A];
+        dout_1_A_im <= ram_1_im[addr_1_A];
+    end
+    always @(posedge clk) begin
+        if (we_1_B) begin
+            ram_1_re[addr_1_B] <= din_1_B_re;
+            ram_1_im[addr_1_B] <= din_1_B_im;
+        end
+        dout_1_B_re <= ram_1_re[addr_1_B];
+        dout_1_B_im <= ram_1_im[addr_1_B];
+    end
 
-        if (we_2_A) begin ram_2_re[addr_2_A] <= din_2_A_re; ram_2_im[addr_2_A] <= din_2_A_im; end
-        if (we_2_B) begin ram_2_re[addr_2_B] <= din_2_B_re; ram_2_im[addr_2_B] <= din_2_B_im; end
-        dout_2_A_re <= ram_2_re[addr_2_A]; dout_2_A_im <= ram_2_im[addr_2_A];
-        dout_2_B_re <= ram_2_re[addr_2_B]; dout_2_B_im <= ram_2_im[addr_2_B];
+    // RAM 2
+    always @(posedge clk) begin
+        if (we_2_A) begin
+            ram_2_re[addr_2_A] <= din_2_A_re;
+            ram_2_im[addr_2_A] <= din_2_A_im;
+        end
+        dout_2_A_re <= ram_2_re[addr_2_A];
+        dout_2_A_im <= ram_2_im[addr_2_A];
+    end
+    always @(posedge clk) begin
+        if (we_2_B) begin
+            ram_2_re[addr_2_B] <= din_2_B_re;
+            ram_2_im[addr_2_B] <= din_2_B_im;
+        end
+        dout_2_B_re <= ram_2_re[addr_2_B];
+        dout_2_B_im <= ram_2_im[addr_2_B];
+    end
 
-        if (we_3_A) begin ram_3_re[addr_3_A] <= din_3_A_re; ram_3_im[addr_3_A] <= din_3_A_im; end
-        if (we_3_B) begin ram_3_re[addr_3_B] <= din_3_B_re; ram_3_im[addr_3_B] <= din_3_B_im; end
-        dout_3_A_re <= ram_3_re[addr_3_A]; dout_3_A_im <= ram_3_im[addr_3_A];
-        dout_3_B_re <= ram_3_re[addr_3_B]; dout_3_B_im <= ram_3_im[addr_3_B];
+    // RAM 3
+    always @(posedge clk) begin
+        if (we_3_A) begin
+            ram_3_re[addr_3_A] <= din_3_A_re;
+            ram_3_im[addr_3_A] <= din_3_A_im;
+        end
+        dout_3_A_re <= ram_3_re[addr_3_A];
+        dout_3_A_im <= ram_3_im[addr_3_A];
+    end
+    always @(posedge clk) begin
+        if (we_3_B) begin
+            ram_3_re[addr_3_B] <= din_3_B_re;
+            ram_3_im[addr_3_B] <= din_3_B_im;
+        end
+        dout_3_B_re <= ram_3_re[addr_3_B];
+        dout_3_B_im <= ram_3_im[addr_3_B];
     end
 
     // --- REKONSTRUKCJA WYJŚĆ Z MULTIPLEKSERAMI ODCZYTU ---
