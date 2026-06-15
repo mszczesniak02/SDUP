@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-state" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#3730A3"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.2"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4A5568"/>
+    </marker>
+  </defs>
+
+  <rect width="600" height="350" fill="#F7FAFC" rx="10"/>
+
+  <!-- Start Point -->
+  <circle cx="60" cy="80" r="10" fill="#1F2937"/>
+  <path d="M 70 80 L 122 80" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="96" y="70" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">RESET</text>
+
+  <!-- IDLE State -->
+  <g filter="url(#shadow)">
+    <rect x="130" y="55" width="100" height="50" rx="25" fill="url(#grad-state)"/>
+    <text x="180" y="80" font-family="'Segoe UI', Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">IDLE</text>
+  </g>
+
+  <!-- CALC State -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="55" width="100" height="50" rx="25" fill="url(#grad-state)"/>
+    <text x="410" y="80" font-family="'Segoe UI', Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">CALC</text>
+  </g>
+
+  <!-- FLUSH State -->
+  <g filter="url(#shadow)">
+    <rect x="360" y="220" width="100" height="50" rx="25" fill="url(#grad-state)"/>
+    <text x="410" y="245" font-family="'Segoe UI', Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">FLUSH</text>
+  </g>
+
+  <!-- DONE State -->
+  <g filter="url(#shadow)">
+    <rect x="130" y="220" width="100" height="50" rx="25" fill="url(#grad-state)"/>
+    <text x="180" y="245" font-family="'Segoe UI', Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#FFF" text-anchor="middle" dominant-baseline="middle">DONE</text>
+  </g>
+
+  <!-- Transitions -->
+  <!-- IDLE -> CALC -->
+  <path d="M 230 80 L 352 80" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="290" y="65" font-family="'Segoe UI', Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#1F2937" text-anchor="middle">start == 1</text>
+  <text x="290" y="95" font-family="'Segoe UI', Helvetica, sans-serif" font-size="9" fill="#718096" text-anchor="middle">Inicjalizacja liczników</text>
+
+  <!-- CALC self loop -->
+  <path d="M 430 55 C 460 20, 490 50, 442 70" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="495" y="45" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">bfly_cnt / group_cnt</text>
+
+  <!-- CALC -> FLUSH -->
+  <path d="M 410 105 L 410 212" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="465" y="155" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="left">Koniec etapu (stage)<br/>(256 motylków zaadresowane)</text>
+
+  <!-- FLUSH -> CALC (next stage) -->
+  <path d="M 380 220 L 380 113" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="300" y="155" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">drain_cnt == 2 i stage_cnt &lt; 9<br/>(Inkrem. stage_cnt)</text>
+
+  <!-- FLUSH -> DONE -->
+  <path d="M 360 245 L 238 245" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="299" y="225" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">drain_cnt == 2 i stage_cnt == 9</text>
+  <text x="299" y="260" font-family="'Segoe UI', Helvetica, sans-serif" font-size="9" fill="#718096" text-anchor="middle">(FFT zakończone)</text>
+
+  <!-- DONE -> IDLE -->
+  <path d="M 180 220 L 180 113" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <text x="140" y="165" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">done = 1</text>
+</svg>
