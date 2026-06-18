@@ -46,27 +46,33 @@
   <!-- Transitions -->
   <!-- IDLE -> CALC -->
   <path d="M 230 80 L 352 80" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="290" y="65" font-family="'Segoe UI', Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#1F2937" text-anchor="middle">start == 1</text>
+  <text x="290" y="65" font-family="'Segoe UI', Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#1F2937" text-anchor="middle">Sygnał startu</text>
   <text x="290" y="95" font-family="'Segoe UI', Helvetica, sans-serif" font-size="9" fill="#718096" text-anchor="middle">Inicjalizacja liczników</text>
 
   <!-- CALC self loop -->
   <path d="M 430 55 C 460 20, 490 50, 442 70" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="495" y="45" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">bfly_cnt / group_cnt</text>
+  <text x="480" y="45" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="start">Przetwarzanie próbek</text>
 
   <!-- CALC -> FLUSH -->
   <path d="M 410 105 L 410 212" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="465" y="155" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="left">Koniec etapu (stage)<br/>(256 motylków zaadresowane)</text>
+  <text font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="start">
+    <tspan x="420" y="155">Koniec etapu (stage)</tspan>
+    <tspan x="420" y="170">(256 motylków zaadresowane)</tspan>
+  </text>
 
   <!-- FLUSH -> CALC (next stage) -->
   <path d="M 380 220 L 380 113" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="300" y="155" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">drain_cnt == 2 i stage_cnt &lt; 9<br/>(Inkrem. stage_cnt)</text>
+  <text font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">
+    <tspan x="290" y="155">Oczekiwanie na potok</tspan>
+    <tspan x="290" y="170">(Przejście do kolejnego etapu)</tspan>
+  </text>
 
   <!-- FLUSH -> DONE -->
   <path d="M 360 245 L 238 245" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="299" y="225" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">drain_cnt == 2 i stage_cnt == 9</text>
+  <text x="299" y="225" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">Ostatni etap ukończony</text>
   <text x="299" y="260" font-family="'Segoe UI', Helvetica, sans-serif" font-size="9" fill="#718096" text-anchor="middle">(FFT zakończone)</text>
 
   <!-- DONE -> IDLE -->
   <path d="M 180 220 L 180 113" stroke="#4A5568" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-  <text x="140" y="165" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">done = 1</text>
+  <text x="140" y="165" font-family="'Segoe UI', Helvetica, sans-serif" font-size="10" fill="#4A5568" text-anchor="middle">Wysłanie flagi</text>
 </svg>
