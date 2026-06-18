@@ -18,7 +18,7 @@ https://www.youtube.com/watch?v=Gt5P3kQTfR4
 ```
 
 ### Dokumentacja
-Główny plik raportu ze szczegółowym opisem teoretycznym oraz wynikami weryfikacji znajduje się w katalogu `raport/` w formacie notatnika Jupyter (`.ipynb`) oraz dokumentu PDF (`.pdf`).
+Główny plik raportu ze szczegółowym opisem teoretycznym oraz wynikami weryfikacji znajduje się w katalogu `raport/` w formacie notatnika Jupyter (`.ipynb`).
 
 ---
 
